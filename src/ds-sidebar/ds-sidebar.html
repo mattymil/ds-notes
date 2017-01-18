@@ -1,0 +1,26 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../ds-notebooklist/ds-notebooklist.html">
+
+<!--
+`ds-sidebar`
+Sidebar container for notes and notebook lists
+
+@demo demo/index.html
+-->
+
+<dom-module id="ds-sidebar">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <ds-notebooklist></ds-notebooklist>
+  </template>
+
+  <script>
+    Polymer({is: 'ds-sidebar',
+    properties: {}
+  });
+  </script>
+</dom-module>

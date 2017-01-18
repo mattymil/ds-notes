@@ -1,0 +1,69 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/app-layout/app-layout.html">
+<link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../../bower_components/paper-material/paper-material.html">
+<link rel="import" href="../ds-sidebar/ds-sidebar.html">
+<link rel="import" href="../../bower_components/polymerfire/polymerfire.html">
+
+<dom-module id="ds-notes-app">
+  <template>
+    <style include="app-grid-style">
+      :host {
+        display: block;
+        --app-grid-columns:4;
+        --app-grid-item-height: 600px;
+        --app-grid-gutter: 10px;
+        --app-grid-expandible-item-columns: 3;
+      }
+      app-header {
+        background-color: #fff;
+      }
+      paper-material {
+        background-color: #fff;
+      }
+      .exp {
+        @apply(--app-grid-expandible-item);
+      }
+      #title {
+        margin-left: 7px;
+      }
+    </style>
+
+    <firebase-app
+      api-key="AIzaSyA9419FDbAld2zu0kBnwL0Faj6Fq_ZwuRM"
+      auth-domain="notariety.firebaseapp.com"
+      database-url="https://notariety.firebaseio.com"
+      storage-bucket="project-2215526653877825636.appspot.com"
+      app={{app}}>
+    </firebase-app>
+
+    <app-drawer-layout force-narrow>
+      <app-drawer>
+        <app-toolbar>
+          <span drawer-toggle>Menu 1</span>
+        </app-toolbar>
+      </app-drawer>
+      <app-header-panel>
+        <app-header shadow fixed>
+          <app-toolbar>
+            <paper-icon-button icon="icons:menu" drawer-toggle></paper-icon-button>
+            <span id="title" main-title>Dead Simple Notes</span>
+          </app-toolbar>
+        </app-header>
+        <div class="app-grid">
+          <paper-material elevation="2">
+            <ds-sidebar></side-bar>
+          </paper-material>
+          <paper-material elevation="2" class="exp">
+            <ds-editor></ds-editor>
+          </paper-material>
+        </div>
+      </app-header-panel>
+    </app-drawer-layout>
+  </template>
+
+  <script>
+    Polymer({is: 'ds-notes-app'});
+  </script>
+</dom-module>

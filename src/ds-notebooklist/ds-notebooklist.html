@@ -1,0 +1,53 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-item/paper-item.html">
+
+<!--
+`ds-notebooklist`
+Notebook list component
+
+@demo demo/index.html
+-->
+
+<dom-module id="ds-notebooklist">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+      #listTitle {
+        font-size: 1.2em;
+        margin-left: 7px;
+      }
+      #listItem {
+        margin-top: 0px;
+      }
+    </style>
+
+    <firebase-query
+      path="/users/1010b381-e201-46d9-82ee-3f08a10e9cd5/notebooks"
+      data="{{notebooks}}">
+    </firebase-query>
+        <p id=listTitle>Notebooks</p>
+        <template is="dom-repeat" items="{{notebooks}}" as="notebook">
+          <paper-item id="listItem" on-tap="handleMe">[[notebook.title]]</paper-item>
+        </template>
+    </template>
+
+  <script>
+    Polymer({
+
+      is: 'ds-notebooklist',
+
+      properties: {
+        notebooks: {
+          type: Array,
+          value: []
+        },
+      },
+      handleMe: function() {
+        console.log('handled')
+      },
+
+    });
+  </script>
+</dom-module>

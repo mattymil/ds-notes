@@ -1,0 +1,7 @@
+{
+  "name": "ds-notes",
+  "short_name": "ds-notes",
+  "description": "A dead simple note taking application",
+  "start_url": "/",
+  "display": "standalone"
+}
