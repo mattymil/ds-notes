@@ -1,5 +1,6 @@
-<link rel="import" href="./bower_components/polymer/polymer.html">
-<link rel="import" href="./bower_components/paper-material/paper-material.html">
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-material/paper-material.html">
+<link rel="import" href="../../bower_components/polymer-quill/polymer-quill.html">
 
 <!--
 `ds-editor`
@@ -13,12 +14,21 @@ Editor component for dead simple notes.
     <style>
       :host {
         display: block;
+
+      }
+      paper-material {
+        background-color: #fff;
         width: 100%;
         height: 100%;
       }
+      polymer-quill {
+        height: 600px;
+        padding: 0;
+        margin: 0;
+      }
     </style>
     <paper-material elevation="2">
-      Hello Editor
+      <polymer-quill content="{{data}}"></polymer-quill>
     </paper-material>
   </template>
 

@@ -21,18 +21,10 @@
       }
       #sideBar {
         height: 600px;
-        border: solid black;
-        margin: 20px 0px 10px 10px;
       }
       #editor {
         height: 600px;
-        border: solid black;
         margin: 20px 10px 10px 10px;
-      }
-      @media (max-width: 600px) {
-        #sideBar {
-          display: none;
-        }
       }
     </style>
 
@@ -49,6 +41,9 @@
         <app-toolbar>
           <span drawer-toggle>Menu 1</span>
         </app-toolbar>
+        <div id="sideBar">
+          <ds-sidebar></ds-sidebar>
+        </div>
       </app-drawer>
       <app-header-panel>
         <app-header shadow fixed>
@@ -58,11 +53,8 @@
           </app-toolbar>
         </app-header>
         <div class="layout horizontal">
-          <div id="sideBar">
-            <ds-sidebar></ds-sidebar>
-          </div>
           <div id="editor" class="flex">
-            test
+            <ds-editor></ds-editor>
           </div>
         </div>
       </app-header-panel>

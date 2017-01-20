@@ -1,5 +1,6 @@
-<link rel="import" href="./bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/paper-item/paper-item.html">
+<link rel="import" href="../../bower_components/paper-material/paper-material.html">
 
 <!--
 `ds-notebooklist`
@@ -13,6 +14,11 @@ Notebook list component
     <style>
       :host {
         display: block;
+        height: 280px;
+      }
+      paper-material {
+        background-color: #fff;
+
       }
       #listTitle {
         font-size: 1.2em;
@@ -27,10 +33,12 @@ Notebook list component
       path="/users/1010b381-e201-46d9-82ee-3f08a10e9cd5/notebooks"
       data="{{notebooks}}">
     </firebase-query>
-        <p id=listTitle>Notebooks</p>
-        <template is="dom-repeat" items="{{notebooks}}" as="notebook">
-          <paper-item id="listItem" on-tap="handleMe">[[notebook.title]]</paper-item>
-        </template>
+
+      <p id=listTitle>Notebooks</p>
+      <template is="dom-repeat" items="{{notebooks}}" as="notebook">
+        <paper-item id="listItem" on-tap="handleMe">[[notebook.title]]</paper-item>
+      </template>
+
     </template>
 
   <script>

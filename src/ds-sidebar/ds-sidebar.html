@@ -1,5 +1,7 @@
-<link rel="import" href="./bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../ds-notebooklist/ds-notebooklist.html">
+<link rel="import" href="../ds-noteslist/ds-noteslist.html">
+<link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
 
 <!--
 `ds-sidebar`
@@ -10,12 +12,15 @@ Sidebar container for notes and notebook lists
 
 <dom-module id="ds-sidebar">
   <template>
-    <style>
+    <style include="iron-flex iron-flex-alignment">
       :host {
         display: block;
       }
     </style>
-    <ds-notebooklist></ds-notebooklist>
+    <div class="layout vertical around-justified">
+      <ds-notebooklist></ds-notebooklist>
+      <ds-noteslist></ds-noteslist>
+    </div>
   </template>
 
   <script>
